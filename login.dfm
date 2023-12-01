@@ -1,10 +1,10 @@
 object Form1: TForm1
-  Left = 442
-  Top = 244
+  Left = 412
+  Top = 199
   Width = 1044
   Height = 540
   Caption = 'LOGIN'
-  Color = clFuchsia
+  Color = 16744703
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -16,7 +16,7 @@ object Form1: TForm1
   object lbl1: TLabel
     Left = 400
     Top = 64
-    Width = 133
+    Width = 145
     Height = 25
     Caption = 'LOGIN USER'
     Font.Charset = DEFAULT_CHARSET
@@ -72,6 +72,12 @@ object Form1: TForm1
     Width = 121
     Height = 57
     Caption = 'LOGIN'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
     TabOrder = 2
     OnClick = btn1Click
   end
@@ -81,6 +87,12 @@ object Form1: TForm1
     Width = 121
     Height = 57
     Caption = 'CANCLE'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
     TabOrder = 3
     OnClick = btn2Click
   end

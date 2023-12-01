@@ -5,18 +5,18 @@ object Form2: TForm2
   Height = 540
   Caption = 'MENU'
   Color = clAqua
-  Font.Charset = DEFAULT_CHARSET
+  Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
+  Font.Name = 'Times New Roman'
+  Font.Style = [fsBold, fsItalic]
   OldCreateOrder = False
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 14
   object lbl1: TLabel
     Left = 160
     Top = 32
-    Width = 682
+    Width = 657
     Height = 24
     Caption = 'PENJUALAN MAKANAN KUCING DAN ANJING PADA TESHOP CACA'
     Color = clAqua
@@ -24,7 +24,7 @@ object Form2: TForm2
     Font.Color = clBlack
     Font.Height = -21
     Font.Name = 'Times New Roman'
-    Font.Style = [fsBold]
+    Font.Style = [fsBold, fsItalic]
     ParentColor = False
     ParentFont = False
   end
@@ -34,11 +34,11 @@ object Form2: TForm2
     Width = 137
     Height = 73
     Caption = 'USER'
-    Font.Charset = DEFAULT_CHARSET
+    Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold, fsItalic]
     ParentFont = False
     TabOrder = 0
     OnClick = btn1Click
@@ -86,6 +86,7 @@ object Form2: TForm2
     Height = 73
     Caption = 'DETAIL BELI'
     TabOrder = 5
+    OnClick = btn6Click
   end
   object btn7: TButton
     Left = 496
@@ -94,6 +95,7 @@ object Form2: TForm2
     Height = 73
     Caption = 'DETAIL JUAL'
     TabOrder = 6
+    OnClick = btn7Click
   end
   object btn8: TButton
     Left = 728

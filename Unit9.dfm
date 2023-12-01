@@ -1,84 +1,86 @@
 object Form9: TForm9
-  Left = 278
-  Top = 193
+  Left = 457
+  Top = 182
   Width = 1044
   Height = 540
-  Caption = 'SUPPLIER'
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
+  Caption = 'TABEL SUPPLIER'
+  Color = 4227200
+  Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
+  Font.Name = 'Times New Roman'
+  Font.Style = [fsBold, fsItalic]
   OldCreateOrder = False
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 14
   object lbl1: TLabel
     Left = 384
     Top = 32
-    Width = 80
-    Height = 13
+    Width = 160
+    Height = 22
     Caption = 'TABEL SUPPLIER'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
   end
   object lbl2: TLabel
     Left = 160
     Top = 88
-    Width = 79
-    Height = 13
+    Width = 87
+    Height = 14
     Caption = 'NAMA SUPPLIER'
   end
   object lbl3: TLabel
     Left = 168
     Top = 136
-    Width = 40
-    Height = 13
+    Width = 44
+    Height = 14
     Caption = 'ALAMAT'
   end
   object lbl4: TLabel
     Left = 168
     Top = 184
-    Width = 23
-    Height = 13
+    Width = 28
+    Height = 14
     Caption = 'TELP'
   end
   object lbl5: TLabel
     Left = 160
     Top = 224
-    Width = 99
-    Height = 13
+    Width = 107
+    Height = 14
     Caption = 'NAMA PERUSAHAAN'
   end
   object edt1: TEdit
     Left = 280
     Top = 88
-    Width = 121
-    Height = 21
+    Width = 257
+    Height = 22
     TabOrder = 0
-    Text = 'edt1'
   end
   object edt2: TEdit
     Left = 280
     Top = 128
-    Width = 121
-    Height = 21
+    Width = 257
+    Height = 22
     TabOrder = 1
-    Text = 'edt2'
   end
   object edt3: TEdit
     Left = 280
     Top = 168
-    Width = 121
-    Height = 21
+    Width = 257
+    Height = 22
     TabOrder = 2
-    Text = 'edt3'
   end
   object edt4: TEdit
     Left = 280
     Top = 216
-    Width = 121
-    Height = 21
+    Width = 257
+    Height = 22
     TabOrder = 3
-    Text = 'edt4'
   end
   object btn1: TButton
     Left = 88
@@ -87,6 +89,7 @@ object Form9: TForm9
     Height = 25
     Caption = 'BARU'
     TabOrder = 4
+    OnClick = btn1Click
   end
   object btn2: TButton
     Left = 232
@@ -95,58 +98,70 @@ object Form9: TForm9
     Height = 25
     Caption = 'SIMPAN'
     TabOrder = 5
+    OnClick = btn2Click
   end
   object btn3: TButton
     Left = 384
-    Top = 264
+    Top = 272
     Width = 75
     Height = 25
     Caption = 'EDIT'
     TabOrder = 6
+    OnClick = btn3Click
   end
   object btn4: TButton
     Left = 512
-    Top = 264
+    Top = 272
     Width = 75
     Height = 25
     Caption = 'HAPUS'
     TabOrder = 7
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 648
-    Top = 264
+    Top = 272
     Width = 75
     Height = 25
     Caption = 'BATAL'
     TabOrder = 8
+    OnClick = btn5Click
   end
   object btn6: TButton
     Left = 776
-    Top = 256
+    Top = 264
     Width = 75
     Height = 25
     Caption = 'LAPORAN'
     TabOrder = 9
   end
   object dbgrd1: TDBGrid
-    Left = 280
-    Top = 320
-    Width = 320
+    Left = 232
+    Top = 344
+    Width = 649
     Height = 120
+    DataSource = ds1
     TabOrder = 10
-    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
+    TitleFont.Name = 'Times New Roman'
+    TitleFont.Style = [fsBold, fsItalic]
+    OnCellClick = dbgrd1CellClick
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
-    Port = 0
-    Left = 784
-    Top = 40
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'petshopicha'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'D:\PERKULIAHAN\SEMESTER 5\VISUAL 3\uas visual 3\libmysql.dll'
+    Left = 768
+    Top = 56
   end
   object frxdbdtst1: TfrxDBDataset
     UserName = 'frxdbdtst1'
@@ -169,19 +184,24 @@ object Form9: TForm9
       'begin'
       ''
       'end.')
-    Left = 768
+    Left = 752
     Top = 120
     Datasets = <>
     Variables = <>
     Style = <>
   end
   object zqry1: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'select * from supplier')
     Params = <>
-    Left = 848
+    Left = 832
     Top = 120
   end
   object ds1: TDataSource
-    Left = 920
+    DataSet = zqry1
+    Left = 904
     Top = 120
   end
 end

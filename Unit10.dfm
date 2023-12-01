@@ -1,10 +1,10 @@
-object Form4: TForm4
-  Left = 399
-  Top = 162
-  Width = 975
-  Height = 570
-  Caption = 'TABEL CUSTOMER'
-  Color = 8421631
+object Form10: TForm10
+  Left = 331
+  Top = 159
+  Width = 1044
+  Height = 540
+  Caption = 'TABEL DETAIL JUAL'
+  Color = clTeal
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -14,166 +14,148 @@ object Form4: TForm4
   PixelsPerInch = 96
   TextHeight = 14
   object lbl1: TLabel
-    Left = 312
+    Left = 392
     Top = 24
-    Width = 173
-    Height = 22
-    Caption = 'TABEL COSTUMER'
-    Font.Charset = ANSI_CHARSET
+    Width = 192
+    Height = 23
+    Caption = 'TABEL DETAIL JUAL'
+    Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
-    Font.Name = 'Times New Roman'
+    Font.Name = 'Tahoma'
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
   end
   object lbl2: TLabel
-    Left = 128
+    Left = 216
     Top = 80
-    Width = 94
+    Width = 43
     Height = 14
-    Caption = 'NAMA CUSTOMER'
+    Caption = 'JUAL ID'
   end
   object lbl3: TLabel
-    Left = 144
-    Top = 112
-    Width = 84
+    Left = 208
+    Top = 104
+    Width = 59
     Height = 14
-    Caption = 'JENIS KELAMIN'
+    Caption = 'BARANG ID'
   end
   object lbl4: TLabel
-    Left = 176
-    Top = 144
-    Width = 44
+    Left = 216
+    Top = 136
+    Width = 47
     Height = 14
-    Caption = 'ALAMAT'
+    Caption = 'JUMLAH'
   end
   object lbl5: TLabel
-    Left = 160
-    Top = 176
-    Width = 67
+    Left = 200
+    Top = 168
+    Width = 65
     Height = 14
-    Caption = 'TELEPHONE'
+    Caption = 'HARGA BELI'
   end
   object lbl6: TLabel
-    Left = 176
-    Top = 208
-    Width = 46
+    Left = 200
+    Top = 200
+    Width = 68
     Height = 14
-    Caption = 'ID_JUAL'
-  end
-  object lbl7: TLabel
-    Left = 160
-    Top = 240
-    Width = 62
-    Height = 14
-    Caption = 'ID_BARANG'
+    Caption = 'HARGA JUAL'
   end
   object edt1: TEdit
-    Left = 232
-    Top = 80
-    Width = 273
+    Left = 272
+    Top = 72
+    Width = 257
     Height = 22
     TabOrder = 0
   end
-  object cbb1: TComboBox
-    Left = 232
-    Top = 112
-    Width = 273
-    Height = 22
-    ItemHeight = 14
-    TabOrder = 1
-    Items.Strings = (
-      'L'
-      'P')
-  end
   object edt2: TEdit
-    Left = 232
-    Top = 144
-    Width = 273
+    Left = 272
+    Top = 104
+    Width = 257
+    Height = 22
+    TabOrder = 1
+  end
+  object edt3: TEdit
+    Left = 272
+    Top = 136
+    Width = 257
     Height = 22
     TabOrder = 2
   end
-  object edt3: TEdit
-    Left = 232
-    Top = 176
-    Width = 273
+  object edt4: TEdit
+    Left = 272
+    Top = 168
+    Width = 257
     Height = 22
     TabOrder = 3
   end
-  object edt4: TEdit
-    Left = 232
-    Top = 208
-    Width = 273
+  object edt5: TEdit
+    Left = 272
+    Top = 200
+    Width = 257
     Height = 22
     TabOrder = 4
   end
-  object edt5: TEdit
-    Left = 232
-    Top = 240
-    Width = 273
-    Height = 22
-    TabOrder = 5
-  end
   object btn1: TButton
-    Left = 120
-    Top = 280
+    Left = 136
+    Top = 248
     Width = 75
     Height = 25
     Caption = 'BARU'
-    TabOrder = 6
+    TabOrder = 5
     OnClick = btn1Click
   end
   object btn2: TButton
-    Left = 256
-    Top = 280
+    Left = 280
+    Top = 248
     Width = 75
     Height = 25
     Caption = 'SIMPAN'
-    TabOrder = 7
+    TabOrder = 6
     OnClick = btn2Click
   end
   object btn3: TButton
-    Left = 384
-    Top = 280
+    Left = 432
+    Top = 248
     Width = 75
     Height = 25
     Caption = 'EDIT'
-    TabOrder = 8
+    TabOrder = 7
     OnClick = btn3Click
   end
   object btn4: TButton
-    Left = 520
-    Top = 280
+    Left = 560
+    Top = 248
     Width = 75
     Height = 25
     Caption = 'HAPUS'
-    TabOrder = 9
+    TabOrder = 8
     OnClick = btn4Click
   end
   object btn5: TButton
-    Left = 656
-    Top = 280
+    Left = 696
+    Top = 248
     Width = 75
     Height = 25
     Caption = 'BATAL'
-    TabOrder = 10
+    TabOrder = 9
     OnClick = btn5Click
   end
   object btn6: TButton
-    Left = 776
-    Top = 280
+    Left = 824
+    Top = 248
     Width = 75
     Height = 25
     Caption = 'LAPORAN'
-    TabOrder = 11
+    TabOrder = 10
   end
   object dbgrd1: TDBGrid
-    Left = 96
-    Top = 336
-    Width = 889
+    Left = 216
+    Top = 304
+    Width = 649
     Height = 120
     DataSource = ds1
-    TabOrder = 12
+    TabOrder = 11
     TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -186,7 +168,6 @@ object Form4: TForm4
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
     Connected = True
-    DesignConnection = True
     HostName = 'localhost'
     Port = 3306
     Database = 'petshopicha'
@@ -227,7 +208,7 @@ object Form4: TForm4
     Connection = con1
     Active = True
     SQL.Strings = (
-      'select  *  from customer')
+      'select * from detail_jual')
     Params = <>
     Left = 832
     Top = 120

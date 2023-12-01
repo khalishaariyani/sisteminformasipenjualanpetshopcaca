@@ -3,112 +3,112 @@ object Form7: TForm7
   Top = 159
   Width = 1044
   Height = 588
-  Caption = 'JUAL'
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
+  Caption = 'TABEL JUAL'
+  Color = 4259584
+  Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
+  Font.Name = 'Times New Roman'
+  Font.Style = [fsBold, fsItalic]
   OldCreateOrder = False
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 14
   object lbl1: TLabel
     Left = 392
     Top = 24
-    Width = 65
-    Height = 13
+    Width = 115
+    Height = 22
     Caption = 'TABEL JUAL'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
   end
   object lbl2: TLabel
     Left = 184
     Top = 80
-    Width = 75
-    Height = 13
+    Width = 81
+    Height = 14
     Caption = 'CUSTOMER_ ID'
   end
   object lbl3: TLabel
     Left = 200
     Top = 120
-    Width = 56
-    Height = 13
+    Width = 65
+    Height = 14
     Caption = 'BULAN BELI'
   end
   object lbl4: TLabel
     Left = 176
     Top = 160
-    Width = 73
-    Height = 13
+    Width = 82
+    Height = 14
     Caption = 'TANGGAL JUAL'
   end
   object lbl5: TLabel
     Left = 224
     Top = 200
-    Width = 32
-    Height = 13
+    Width = 35
+    Height = 14
     Caption = 'TOTAL'
   end
   object lbl6: TLabel
     Left = 224
     Top = 240
     Width = 33
-    Height = 13
+    Height = 14
     Caption = 'BAYAR'
   end
   object lbl7: TLabel
     Left = 208
     Top = 280
-    Width = 42
-    Height = 13
+    Width = 49
+    Height = 14
     Caption = 'KEMBALI'
   end
   object edt1: TEdit
     Left = 272
     Top = 80
-    Width = 121
-    Height = 21
+    Width = 281
+    Height = 22
     TabOrder = 0
-    Text = 'edt1'
   end
   object edt2: TEdit
     Left = 272
     Top = 120
-    Width = 121
-    Height = 21
+    Width = 281
+    Height = 22
     TabOrder = 1
-    Text = 'edt2'
   end
   object edt3: TEdit
     Left = 272
     Top = 160
-    Width = 121
-    Height = 21
+    Width = 281
+    Height = 22
     TabOrder = 2
-    Text = 'edt3'
   end
   object edt4: TEdit
     Left = 272
     Top = 200
-    Width = 121
-    Height = 21
+    Width = 281
+    Height = 22
     TabOrder = 3
-    Text = 'edt4'
   end
   object edt5: TEdit
     Left = 272
     Top = 240
-    Width = 121
-    Height = 21
+    Width = 281
+    Height = 22
     TabOrder = 4
-    Text = 'edt5'
   end
   object edt6: TEdit
     Left = 272
     Top = 280
-    Width = 121
-    Height = 21
+    Width = 281
+    Height = 22
     TabOrder = 5
-    Text = 'edt6'
   end
   object btn1: TButton
     Left = 176
@@ -117,6 +117,7 @@ object Form7: TForm7
     Height = 25
     Caption = 'BARU'
     TabOrder = 6
+    OnClick = btn1Click
   end
   object btn2: TButton
     Left = 312
@@ -125,6 +126,7 @@ object Form7: TForm7
     Height = 25
     Caption = 'SIMPAN'
     TabOrder = 7
+    OnClick = btn2Click
   end
   object btn3: TButton
     Left = 432
@@ -133,6 +135,7 @@ object Form7: TForm7
     Height = 25
     Caption = 'EDIT'
     TabOrder = 8
+    OnClick = btn3Click
   end
   object btn4: TButton
     Left = 552
@@ -141,6 +144,7 @@ object Form7: TForm7
     Height = 25
     Caption = 'HAPUS'
     TabOrder = 9
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 664
@@ -149,6 +153,7 @@ object Form7: TForm7
     Height = 25
     Caption = 'BATAL'
     TabOrder = 10
+    OnClick = btn5Click
   end
   object btn6: TButton
     Left = 776
@@ -165,19 +170,26 @@ object Form7: TForm7
     Height = 153
     DataSource = ds1
     TabOrder = 12
-    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
+    TitleFont.Name = 'Times New Roman'
+    TitleFont.Style = [fsBold, fsItalic]
+    OnCellClick = dbgrd1CellClick
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
-    Port = 0
-    Left = 784
-    Top = 40
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'petshopicha'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'D:\PERKULIAHAN\SEMESTER 5\VISUAL 3\uas visual 3\libmysql.dll'
+    Left = 768
+    Top = 56
   end
   object frxdbdtst1: TfrxDBDataset
     UserName = 'frxdbdtst1'
@@ -200,19 +212,24 @@ object Form7: TForm7
       'begin'
       ''
       'end.')
-    Left = 768
+    Left = 752
     Top = 120
     Datasets = <>
     Variables = <>
     Style = <>
   end
   object zqry1: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'select * from jual')
     Params = <>
-    Left = 848
+    Left = 832
     Top = 120
   end
   object ds1: TDataSource
-    Left = 920
+    DataSet = zqry1
+    Left = 904
     Top = 120
   end
 end

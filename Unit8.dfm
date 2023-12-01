@@ -1,51 +1,57 @@
 object Form8: TForm8
-  Left = 492
-  Top = 153
+  Left = 377
+  Top = 170
   Width = 1044
   Height = 540
-  Caption = 'KATEGORI'
-  Color = clYellow
-  Font.Charset = DEFAULT_CHARSET
+  Caption = 'TABEL KATEGORI'
+  Color = 8454143
+  Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
+  Font.Name = 'Times New Roman'
+  Font.Style = [fsBold, fsItalic]
   OldCreateOrder = False
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 14
   object lbl1: TLabel
     Left = 400
     Top = 56
-    Width = 84
-    Height = 13
+    Width = 164
+    Height = 22
     Caption = 'TABEL KATEGORI'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
   end
   object lbl2: TLabel
     Left = 248
     Top = 112
-    Width = 83
-    Height = 13
+    Width = 88
+    Height = 14
     Caption = 'NAMA KATEGORI'
   end
   object lbl3: TLabel
     Left = 280
     Top = 152
-    Width = 52
-    Height = 13
+    Width = 56
+    Height = 14
     Caption = 'DESKRIPSI'
   end
   object edt1: TEdit
     Left = 352
     Top = 112
-    Width = 121
-    Height = 21
+    Width = 257
+    Height = 22
     TabOrder = 0
   end
   object edt2: TEdit
     Left = 352
     Top = 152
-    Width = 121
-    Height = 21
+    Width = 257
+    Height = 22
     TabOrder = 1
   end
   object dbgrd1: TDBGrid
@@ -53,12 +59,13 @@ object Form8: TForm8
     Top = 288
     Width = 320
     Height = 120
+    DataSource = ds1
     TabOrder = 2
-    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
+    TitleFont.Name = 'Times New Roman'
+    TitleFont.Style = [fsBold, fsItalic]
     OnCellClick = dbgrd1CellClick
   end
   object btn1: TButton
@@ -118,7 +125,13 @@ object Form8: TForm8
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
-    Port = 0
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'petshopicha'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'D:\PERKULIAHAN\SEMESTER 5\VISUAL 3\uas visual 3\libmysql.dll'
     Left = 768
     Top = 56
   end
@@ -150,11 +163,16 @@ object Form8: TForm8
     Style = <>
   end
   object zqry1: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'select * from kategori')
     Params = <>
     Left = 832
     Top = 120
   end
   object ds1: TDataSource
+    DataSet = zqry1
     Left = 904
     Top = 120
   end

@@ -53,28 +53,14 @@ implementation
 
 procedure TForm8.btn1Click(Sender: TObject);
 begin
-//SIMPAN
+editbersih;
 
-if(edt1.Text = '') or (edt2.Text = '') then
-begin
-  ShowMessage('DATA TIDAK BOLEH KOSONG !');
-end else
-if(zqry1.Locate('nama_cust',edt1.Text,[]))then
-begin
-  ShowMessage('Data cust sudah ada');
-  posisiawal;
-end else
-begin
-zqry1.sql.clear;
-zqry1.sql.Add('insert into kategori values(null,"'+edt1.Text+'","'+edt2.text+'")');
-zqry1.ExecSQL;
-
-zqry1.SQL.Clear;
-zqry1.SQL.Add('select * from kategori');
-zqry1.Open;
-ShowMessage('DATA BERHASIL DISIMPAN!!');
-posisiawal;
-end;
+btn1.Enabled:= false;
+btn2.Enabled:= True;
+btn3.Enabled:= False;
+btn4.Enabled:= False;
+btn5.Enabled:= True;
+editenable;
 end;
 
 procedure TForm8.btn2Click(Sender: TObject);
@@ -85,7 +71,7 @@ if(edt1.Text = '') or (edt2.Text = '')then
 begin
   ShowMessage('DATA TIDAK BOLEH KOSONG !');
 end else
-if(zqry1.Locate('nama_cust',edt1.Text,[]))then
+if(zqry1.Locate('nama_kategori',edt1.Text,[]))then
 begin
   ShowMessage('Data cust sudah ada');
   posisiawal;
@@ -105,13 +91,43 @@ end;
 
 procedure TForm8.btn3Click(Sender: TObject);
 begin;
+  begin
+id:=dbgrd1.DataSource.DataSet.FieldByName('id').AsString;
 
+
+zqry1.SQL.Clear;
+zqry1.SQL.Add('Update kategori set nama_kategori= "'+edt1.Text+'", deskripsi = "'+edt2.Text+'" where id ="'+id+'"');
+zqry1.ExecSQL;
+ShowMessage('DATA BERHASIL DIUPDATE!'); //UPDATE
+
+zqry1.SQL.Clear;
+zqry1.SQL.Add('select * from kategori');
+zqry1.Open;
+posisiawal;
+end;
 end;
 
 
 procedure TForm8.btn4Click(Sender: TObject);
 begin
+if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)= mryes then
+begin
+id:=dbgrd1.DataSource.DataSet.FieldByName('id').AsString;
+
+zqry1.SQL.Clear;
+zqry1.SQL.Add(' delete from kategori where id ="'+id+'"');
+zqry1.ExecSQL;
+
+zqry1.SQL.Clear;
+zqry1.SQL.Add('select * from kategori');
+zqry1.Open;
+ShowMessage('DATA BERHASIL DIHAPUS');
 posisiawal;
+end else
+begin
+ShowMessage('DATA BATAL DIHAPUS');
+posisiawal;
+end;
 end;
 
 procedure TForm8.btn5Click(Sender: TObject);
