@@ -43,6 +43,7 @@ type
     procedure editbersih;
     procedure editenable;
     procedure editdisable;
+    procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -205,6 +206,11 @@ btn2.Enabled := False ;
 btn3.Enabled := False ;
 btn4.Enabled := False ;
 btn5.Enabled := True;
+end;
+
+procedure TForm6.btn6Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
 end;
 
 end.

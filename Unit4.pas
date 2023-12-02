@@ -44,6 +44,7 @@ type
     procedure editdisable;
     procedure posisiawal;
     procedure dbgrd1CellClick(Column: TColumn);
+    procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -207,6 +208,11 @@ edt2.Text:= zqry1.FieldList[3].AsString;
 edt3.Text:= zqry1.FieldList[4].AsString;
 edt4.Text:= zqry1.FieldList[5].AsString;
 edt5.Text:= zqry1.FieldList[6].AsString;
+end;
+
+procedure TForm4.btn6Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
 end;
 
 end.
